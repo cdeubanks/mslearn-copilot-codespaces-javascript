@@ -120,6 +120,32 @@ a:hover {
 }
 
 img.socialIcon {
+  display: inline-block;
   height: 30px;
   width: 30px;
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
+  filter: grayscale(0.2);
+}
+
+img.socialIcon:hover {
+  animation: socialFloat 0.8s ease-in-out infinite;
+  box-shadow: 0 8px 20px rgba(78, 86, 126, 0.25);
+  filter: grayscale(0) brightness(1.15);
+  transform: translateY(-4px) scale(1.1);
+}
+
+@keyframes socialFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+
+  50% {
+    transform: translateY(-6px) scale(1.08);
+  }
+}
+
+/* change the font family for the social icons */
+img.socialIcon {
+  font-family: "Cormorant Garamond", serif;
 }
